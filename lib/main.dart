@@ -6,26 +6,64 @@ class BytebankApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-            title: Text('Dashboard')
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.green,
+        ).copyWith(
+          secondary: Colors.blueAccent[700],
         ),
-        body: Column(
-          children: <Widget>[
-            Image.asset('images/bytebank_logo.png'),
-            Container(
-              height: 120,
-              width: 100,
-              color: Colors.green,
+        buttonTheme: ButtonThemeData(
+            buttonColor: Colors.blueAccent[700],
+            textTheme: ButtonTextTheme.primary),
+      ),
+      home: Dashboard(),
+    );
+  }
+}
+
+class Dashboard extends StatelessWidget {
+  const Dashboard({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+          title: Text('Dashboard')
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Image.asset('images/bytebank_logo.png'),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB (16.0,16.0,16.0,24.0),
+            child: Container(
+              padding: EdgeInsets.all(8.0),
+              height: 100,
+              width: 150,
+              color: Colors.green[900],
               child: Column(
-                children: <Widget>[
-                  Icon(Icons.people),
-                  Text('Contacts'),
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const <Widget>[
+                  Icon(Icons.people,
+                    size: 32.0,
+                    color: Colors.white,
+                  ),
+                  Text('Contacts',
+                    style: TextStyle(
+                        fontSize: 16.0,
+                        color: Colors.white
+                    ),
+                  ),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
