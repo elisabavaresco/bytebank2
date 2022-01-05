@@ -9,6 +9,16 @@ class ContactsList extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Contacts'),
       ),
+      body: ListView(
+        children: <Widget>[
+          Card(
+            child: ListTile(
+              title: Text('Alex'),
+              subtitle: Text('1000'),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
