@@ -9,26 +9,42 @@ class ContactForm extends StatelessWidget {
       appBar: AppBar(
         title: const Text('New contact'),
       ),
-      body: Column(
-        children: <Widget>[
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Full name',
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: <Widget>[
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Full name',
+              ),
+              style: TextStyle(
+                fontSize: 24.0,
+              ),
             ),
-            style: TextStyle(
-              fontSize: 24.0,
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  labelText: 'Account Number',
+                ),
+                style: TextStyle(
+                  fontSize: 24.0,
+                ),
+                keyboardType: TextInputType.number,
+              ),
             ),
-          ),
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Account Number',
+            Padding(
+              padding: const EdgeInsets.only(top: 16.0),
+              child: SizedBox(
+                width: double.maxFinite,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text('Create'),
+                ),
+              ),
             ),
-            style: TextStyle(
-              fontSize: 24.0,
-            ),
-            keyboardType: TextInputType.number,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
