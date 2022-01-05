@@ -9,6 +9,17 @@ class ContactForm extends StatelessWidget {
       appBar: AppBar(
         title: const Text('New contact'),
       ),
+      body: Column(
+        children: <Widget>[
+          TextField(
+            decoration: InputDecoration(
+              labelText: 'Full name',
+            ),
+            style: TextStyle(fontSize: 24.0,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
