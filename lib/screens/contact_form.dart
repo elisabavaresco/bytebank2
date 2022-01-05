@@ -15,8 +15,18 @@ class ContactForm extends StatelessWidget {
             decoration: InputDecoration(
               labelText: 'Full name',
             ),
-            style: TextStyle(fontSize: 24.0,
+            style: TextStyle(
+              fontSize: 24.0,
             ),
+          ),
+          TextField(
+            decoration: InputDecoration(
+              labelText: 'Account Number',
+            ),
+            style: TextStyle(
+              fontSize: 24.0,
+            ),
+            keyboardType: TextInputType.number,
           ),
         ],
       ),
