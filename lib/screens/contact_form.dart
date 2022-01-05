@@ -7,7 +7,7 @@ class ContactForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Contact Form'),
+        title: const Text('New contact'),
       ),
     );
   }
