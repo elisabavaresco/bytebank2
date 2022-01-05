@@ -13,11 +13,25 @@ class ContactsList extends StatelessWidget {
         children: <Widget>[
           Card(
             child: ListTile(
-              title: Text('Alex'),
-              subtitle: Text('1000'),
+              title: Text(
+                'Alex',
+                style: TextStyle(
+                  fontSize: 24.0,
+                ),
+              ),
+              subtitle: Text(
+                '1000',
+                style: TextStyle(
+                  fontSize: 16.0,
+                ),
+              ),
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
       ),
     );
   }
