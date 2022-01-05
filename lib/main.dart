@@ -7,15 +7,16 @@ class BytebankApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.green,
-        ).copyWith(
-          secondary: Colors.blueAccent[700],
+        primaryColor: Colors.green.shade900,
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: Colors.green.shade900,
+          secondary: Colors.blueAccent.shade700,
         ),
-        buttonTheme: ButtonThemeData(
-            buttonColor: Colors.blueAccent[700],
-            textTheme: ButtonTextTheme.primary),
-      ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(Colors.blueAccent.shade700),
+          ),
+      )),
       home: Dashboard(),
     );
   }
@@ -29,7 +30,7 @@ class Dashboard extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           title: Text('Dashboard'),
-              backgroundColor: Colors.green[900],
+//              backgroundColor: Colors.green[900],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,7 +46,8 @@ class Dashboard extends StatelessWidget {
               padding: EdgeInsets.all(8.0),
               height: 100,
               width: 150,
-              color: Colors.green[900],
+//              color: Colors.green[900],
+              color: Theme.of(context).primaryColor,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
