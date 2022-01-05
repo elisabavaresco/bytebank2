@@ -21,7 +21,7 @@ class BytebankApp extends StatelessWidget {
           ),
         ),
       ),
-      home: ContactsList(),
+      home: Dashboard(),
     );
   }
 }
