@@ -20,33 +20,35 @@ class Dashboard extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 24.0),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => ContactsList(),
+            child: Material(
+              color: Theme.of(context).primaryColor,
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => ContactsList(),
+                    ),
+                  );
+                },
+                child: Container(
+                  padding: EdgeInsets.all(8.0),
+                  height: 100,
+                  width: 150,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const <Widget>[
+                      Icon(
+                        Icons.people,
+                        size: 32.0,
+                        color: Colors.white,
+                      ),
+                      Text(
+                        'Contacts',
+                        style: TextStyle(fontSize: 16.0, color: Colors.white),
+                      ),
+                    ],
                   ),
-                );
-              },
-              child: Container(
-                padding: EdgeInsets.all(8.0),
-                height: 100,
-                width: 150,
-                color: Theme.of(context).primaryColor,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const <Widget>[
-                    Icon(
-                      Icons.people,
-                      size: 32.0,
-                      color: Colors.white,
-                    ),
-                    Text(
-                      'Contacts',
-                      style: TextStyle(fontSize: 16.0, color: Colors.white),
-                    ),
-                  ],
                 ),
               ),
             ),
