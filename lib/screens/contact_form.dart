@@ -9,7 +9,8 @@ class ContactForm extends StatefulWidget {
 
 class _ContactFormState extends State<ContactForm> {
   final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _accountNumberController = TextEditingController();
+  final TextEditingController _accountNumberController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +49,12 @@ class _ContactFormState extends State<ContactForm> {
               child: SizedBox(
                 width: double.maxFinite,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    final String? name = _nameController.text;
+                    final int? accountNumber =
+                        int.tryParse(_accountNumberController.text);
+                    if (name != null && accountNumber != null) ;
+                  },
                   child: Text('Create'),
                 ),
               ),
