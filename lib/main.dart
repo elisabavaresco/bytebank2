@@ -22,7 +22,7 @@ class BytebankApp extends StatelessWidget {
           ),
         ),
       ),
-      home: ContactForm(),
+      home: Dashboard(),
     );
   }
 }

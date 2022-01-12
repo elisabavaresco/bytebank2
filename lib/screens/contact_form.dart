@@ -13,7 +13,7 @@ class ContactForm extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: <Widget>[
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Full name',
               ),
@@ -21,8 +21,8 @@ class ContactForm extends StatelessWidget {
                 fontSize: 24.0,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0),
+            const Padding(
+              padding: EdgeInsets.only(top: 8.0),
               child: TextField(
                 decoration: InputDecoration(
                   labelText: 'Account Number',
