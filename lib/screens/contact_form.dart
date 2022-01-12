@@ -21,7 +21,8 @@ class _ContactFormState extends State<ContactForm> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: <Widget>[
-            const TextField(
+            TextField(
+              controller: _nameController,
               decoration: InputDecoration(
                 labelText: 'Full name',
               ),
@@ -29,9 +30,10 @@ class _ContactFormState extends State<ContactForm> {
                 fontSize: 24.0,
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(top: 8.0),
               child: TextField(
+                controller: _accountNumberController,
                 decoration: InputDecoration(
                   labelText: 'Account Number',
                 ),
