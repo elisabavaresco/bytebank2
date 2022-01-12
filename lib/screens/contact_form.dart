@@ -1,3 +1,4 @@
+import 'package:bytebank2/models/contact.dart';
 import 'package:flutter/material.dart';
 
 class ContactForm extends StatefulWidget {
@@ -53,7 +54,10 @@ class _ContactFormState extends State<ContactForm> {
                     final String? name = _nameController.text;
                     final int? accountNumber =
                         int.tryParse(_accountNumberController.text);
-                    if (name != null && accountNumber != null) ;
+                    if (name != null && accountNumber != null) ; {
+                      final Contact newContact = Contact(name!, accountNumber!);
+                      Navigator.pop(context, newContact);
+                    }
                   },
                   child: Text('Create'),
                 ),
