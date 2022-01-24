@@ -1,3 +1,4 @@
+import 'package:bytebank2/databases/app_database.dart';
 import 'package:bytebank2/models/contact.dart';
 import 'package:bytebank2/screens/contact_form.dart';
 import 'package:flutter/material.dart';
@@ -5,20 +6,24 @@ import 'package:flutter/material.dart';
 class ContactsList extends StatelessWidget {
   ContactsList({Key? key}) : super(key: key);
 
-  final List<Contact> contacts = [];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Contacts'),
       ),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          final Contact contact = contacts[index];
-          return _ContactItem(contact);
+      body: FutureBuilder(
+        future: findAll(),
+        builder: (context, snapshot) {
+          final List contacts = snapshot.data as List;
+          return ListView.builder(
+            itemBuilder: (context, index) {
+              final Contact contact = contacts[index];
+              return _ContactItem(contact);
+            },
+            itemCount: contacts.length,
+          );
         },
-        itemCount: contacts.length,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
